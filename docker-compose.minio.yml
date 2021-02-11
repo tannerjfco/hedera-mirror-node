@@ -1,0 +1,11 @@
+version: "3.3"
+
+services:
+  minio:
+    image: minio/minio
+    container_name: minio
+    command: server /data
+    volumes:
+      - ../hedera-services/compose-network/node0/streams:/data
+    ports:
+      - "9000:9000"
